@@ -11,7 +11,33 @@ import SwiftUI
 struct AnybodyWannaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView{
+                NavigationView{
+                    HomeView()
+                }
+                .tabItem{
+                    Image(systemName:"house.fill")
+                    Text("Home")
+                }
+                
+                NavigationView{
+                    MapView()
+                }
+                .tabItem{
+                    Image(systemName:"map.fill")
+                    Text("Find")
+                }
+                
+                
+                NavigationView{
+                    ProfileView()
+                }
+                .tabItem{
+                    Image(systemName:"circle.fill")
+                    Text("Profile")
+                }
+                
+            }
         }
     }
 }
